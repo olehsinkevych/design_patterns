@@ -1,0 +1,75 @@
+class CarModel():
+    def __init__(self,car,title = "Model S"):
+        self.car = Car
+        self.__title = title
+
+class Car():
+    def __init__(self,engine,gear_box,body,suspension,brake,registrationNum,year = 2010,licenseNumber = "BC5678AC"):
+        self.engine = Engine
+        self.gear_box = GearBox
+        self.body = Body
+        self.suspension = Suspension
+        self.brake = Brake
+        self.__registrationNum = registrationNum
+        self.__year = year
+        self.__licenseNumber = licenseNumber
+    def move_forward(self):
+        print("Moving forward...")
+    def move_backward(self):
+        print("Moving backwards...")
+    def stop(self):
+        print("Stopping up...")
+    def turn_right(self):
+        print("Turning right...")
+    def turn_left(self):
+        print("Turning left...")
+
+class Engine():
+    def __init__(self,capacity = 10.0,numberOfCylinders = 4):
+        self.__capacity = capacity
+        self.__numberOfCylinders = numberOfCylinders
+    def start(self):
+        print("Starting up...")
+    def brake(self):
+        print("Breaking up...")
+    def accelerate(self):
+        print("Accelarating...")
+
+class GearBox():
+    def __init__(self,gear_box_type,gearRatio = [1.0,3.0,5,0], currentGear = 4):
+        self.gear_box_type = GearBoxType
+        self.__gearRatio = gearRatio
+        self.__currentGear = currentGear
+    def shift_up(self):
+        print("Shifting up...")
+    def shift_down(self):
+        print("Shifting down...")
+
+class GearBoxType():
+    def __init__(self,name = "Manual",remarks = "Special"):
+        self.__name = name
+        self.__remarks = remarks
+
+class Body():
+    def __init__(self,numberOfDoors = 4):
+        self.__NumberOfDoors = numberOfDoors
+
+class Suspension():
+    def __init__(self,wheel,springRate = 10.0):
+        self.wheel = Wheel
+        self.__springRate = springRate
+
+class Brake():
+    def __init__(self,wheel,type = "Manual"):
+        self.wheel = Wheel
+        self.__type = type
+
+class Wheel():
+    def __init__(self,tire,diameter = 20.0):
+        self.tire = Tire
+        self.__diameter = diameter
+
+class Tire():
+    def __init__(self,width = 10.0 ,airPressure = 5.0):
+        self.__width = width
+        self.__airPressure = airPressure
