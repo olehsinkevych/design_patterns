@@ -7,7 +7,7 @@ class GearBoxType:
 
 class GearBox:
 
-    def __init__(self, gearRatio: float, currentGear: int,type:GearBoxType):
+    def __init__(self, gearRatio: float, currentGear: int, type: GearBoxType):
         self.gearRatio = gearRatio
         self.currentGear = currentGear
         self.type = type
@@ -26,13 +26,11 @@ class Tire:
         self.airPressure = airPressure
 
 
-
 class Wheel:
 
     def __init__(self, diameter: float):
         self.diameter = diameter
         self.Tire = Tire
-
 
 
 class Suspention:
@@ -56,12 +54,13 @@ class CarModel:
     def __init__(self, title: str):
         self.title = title
 
+
 class Engine:
 
     def __init__(self, capacity: float, numberOfCylinders: int):
         self.capacity = capacity
         self.numberOfCylinders = numberOfCylinders
-        self.engine =  Engine
+        self.engine = Engine
 
     def start(self):
         pass
@@ -78,13 +77,19 @@ class Body:
         self.numberOfDoors = numberOfDoors
         self.car = Car
 
+
 class Car:
 
-    def __init__(self, registrationNum: str, year: int, licenseNum: str,gearBox:GearBox,suspension:Suspention,brake:Brake,body:Body,engine:Engine):
+    def __init__(self, registrationNum: str, year: int, licenseNum: str, gearBox: GearBox, suspension: Suspention,
+                 brake: Brake, body: Body, engine: Engine):
         self.registrationNum = registrationNum
         self.year = year
-        self.licenseNum = licenseNum
-
+        self.__license_num = licenseNum
+        self.__gear_box = gearBox
+        self.__suspension = suspension
+        self.__brake = brake
+        self.__body = body
+        self.__engine = engine
 
     def moveForward(self):
         pass
@@ -102,6 +107,6 @@ class Car:
         pass
 
 
-
+myCar = Car()
 
 # переробити, всі поля зробити нормальними
