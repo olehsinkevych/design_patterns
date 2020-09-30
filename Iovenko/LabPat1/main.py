@@ -4,9 +4,9 @@ class CarModel:
 
 
 class Engine:
-    def __init__(self, capacity: float, numberOfCylinders: int):
+    def __init__(self, capacity: float, number_Of_Cylinders: int):
         self.capacity = capacity
-        self.numberOfCylinders = numberOfCylinders
+        self.__number_Of_Cylinders = number_Of_Cylinders
 
     def start(self):
         pass
@@ -20,24 +20,24 @@ class Engine:
 
 class Body:
     def __init__(self, numberOfDoors: int):
-        self.numberOfDoors = numberOfDoors
+        self.number_Of_Doors = numberOfDoors
 
 
 class Tire:
     def __init__(self, width: float, airPressure: float):
         self.width = width
-        self.airPressure = airPressure
+        self.air_Pressure = airPressure
 
 
 class Wheel:
-    def __init__(self, diameter: float, tire: Tire):
+    def __init__(self, diameter: float, __tire: Tire):
         self.diameter = diameter
 
         self.__tire = tire
 
 
 class Brake:
-    def __init__(self, type: str, wheel: Wheel):
+    def __init__(self, type: str, __wheel: Wheel):
         self.type = type
 
         self.__wheel = wheel
@@ -47,8 +47,8 @@ class Brake:
 
 
 class Suspension:
-    def __init__(self, springRate: float, wheel: Wheel):
-        self.springRate = springRate
+    def __init__(self, springRate: float, __wheel: Wheel):
+        self.spring_Rate = springRate
 
         self.__wheel = wheel
 
@@ -60,9 +60,9 @@ class GearBoxType:
 
 
 class GearBox:
-    def __init__(self, gearRatio: float, currentGear: int, gear_box_type: GearBoxType):
-        self.gearRatio = gearRatio
-        self.currentGear = currentGear
+    def __init__(self, gearRatio: float, currentGear: int, __gear_box_type: GearBoxType):
+        self.gear_Ratio = gearRatio
+        self.current_Gear = currentGear
 
         self.__gear_box_type = gear_box_type
 
@@ -74,12 +74,11 @@ class GearBox:
 
 
 class Car:
-
-    def __init__(self, registrationNum, year: int, licenseNumber: str, gear_box: GearBox, car_model: CarModel,
+    def __init__(self, registrationNum: str, year: int, licenseNumber: str, gear_box: GearBox, car_model: CarModel,
                  engine: Engine, body: Body, suspension: Suspension, brake: Brake):
-        self.registrationNum = registrationNum
+        self.registration_Num = registrationNum
         self.year = year
-        self.licenseNumber = licenseNumber
+        self.license_Number = licenseNumber
 
         self.__gear_box = gear_box
         self.__car_model = car_model
@@ -102,3 +101,18 @@ class Car:
 
     def turnLeft(self):
         pass
+
+
+gear_box_type = GearBoxType("name", "remarks")
+__gear_box = GearBox(2.2, 2, gear_box_type)
+
+tire = Tire(2, 2.4)
+wheel = Wheel(4, tire)
+__suspension = Suspension(3, wheel)
+__brake = Brake("type", wheel)
+
+__body = Body(4)
+__engine = Engine(5, 5)
+
+__car_model = CarModel("model")
+myCar = Car("num", 21, "num", __gear_box, __car_model, __engine, __body, __suspension, __brake)
