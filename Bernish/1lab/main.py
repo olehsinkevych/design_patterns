@@ -28,23 +28,21 @@ class Tire:
 
 class Wheel:
 
-    def __init__(self, diameter: float):
+    def __init__(self, diameter: float, tire: Tire):
         self.diameter = diameter
-        self.Tire = Tire
+        self.tire = tire
 
 
 class Suspention:
-    def __init__(self, springRate: float):
+    def __init__(self, springRate: float, wheel: Wheel):
         self.springRate = springRate
-        self.Wheel = Wheel
-        self.Car = Car
+        self.wheel = wheel
 
 
 class Brake:
-    def __init__(self, type: str):
+    def __init__(self, type: str, wheel: Wheel):
         self.type = type
-        self.Wheel = Wheel
-        self.Car = Car
+        self.wheel = wheel
 
     def apply(self):
         pass
@@ -60,7 +58,6 @@ class Engine:
     def __init__(self, capacity: float, numberOfCylinders: int):
         self.capacity = capacity
         self.numberOfCylinders = numberOfCylinders
-        self.engine = Engine
 
     def start(self):
         pass
@@ -75,7 +72,6 @@ class Engine:
 class Body:
     def __init__(self, numberOfDoors: int):
         self.numberOfDoors = numberOfDoors
-        self.car = Car
 
 
 class Car:
@@ -84,12 +80,12 @@ class Car:
                  brake: Brake, body: Body, engine: Engine):
         self.registrationNum = registrationNum
         self.year = year
-        self.__license_num = licenseNum
-        self.__gear_box = gearBox
-        self.__suspension = suspension
-        self.__brake = brake
-        self.__body = body
-        self.__engine = engine
+        self.license_num = licenseNum
+        self.gear_box = gearBox
+        self.suspension = suspension
+        self.brake = brake
+        self.body = body
+        self.engine = engine
 
     def moveForward(self):
         pass
@@ -107,6 +103,15 @@ class Car:
         pass
 
 
-myCar = Car()
+gear_box_type = GearBoxType("name", "remarks")
+gear_box = GearBox(2.2,2,gear_box_type)
+tire = Tire(2,2.4)
+wheel = Wheel(4,tire)
+suspension = Suspention(3,wheel)
+brake = Brake("type",wheel)
+body = Body(4)
+engine = Engine(5,5)
+car_model = CarModel("model")
+myCar = Car("num",21,"num",gear_box,suspension,brake,body,engine)
 
 # переробити, всі поля зробити нормальними
