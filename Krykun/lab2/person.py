@@ -24,12 +24,11 @@ class Person:
 
 
 class Student(Person):
-    def __init__(self, program: str, year: int, fee: float, name=Person.name, address=Person.address):
+    def __init__(self, name, address, program: str, year: int, fee: float):
+        super().__init__(name, address)
         self._program = program
         self._year = year
         self._fee = fee
-        self.name = name
-        self.address = address
 
     @property
     def program(self):
@@ -61,11 +60,10 @@ class Student(Person):
 
 
 class Staff(Person):
-    def __init__(self, school: str, pay: float, name=Person.name, address=Person.address):
+    def __init__(self, name, address, school: str, pay: float):
+        super().__init__(name, address)
         self._school = school
         self._pay = pay
-        self.name = name
-        self.address = address
 
     @property
     def school(self):

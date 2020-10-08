@@ -1,10 +1,9 @@
 from person import Person, Student, Staff
 
-tom = Person("Tom", "____")
-tom.Person()
+student = Person("name", "address")
 
-tom = Student("121", 2, 30000, tom.name, tom.address)
-tom.Student()
+student = Student(student.name, student.address, "program", 1, 1)
+student.Student()
 
-tom = Staff("111q", 89, tom.name, tom.address)
-tom.Staff()
+student = Staff(student.name, student.address, "school", 1)
+student.Staff()
