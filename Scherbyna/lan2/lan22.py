@@ -20,47 +20,50 @@ class Person:
 
 
 class Student(Person):
-    def __init__ (self,program=str,year=int,fee=float, name=Person.name, address=Person.address):
-        self.program=program
-        self.year=year
-        self.fee=fee
+    def __init__ (self,name ,address ,program=str,year=int,fee=float):
+        super().__init__(name, address)
+        self._program=program
+        self._year=year
+        self._fee=fee
     @property
     def program(self):
-        return self.program
+        return self._program
     @program.setter
     def program(self,program):
-        self.program=program
+        self._program=program
     @property
     def year(self):
-        return self.year
+        return self._year
     @year.setter
     def year(self,year):
-        self.year=year
+        self._year=year
     @property
     def fee(self):
-        return self.fee
+        return self._fee
     @fee.setter
     def fee(self,fee):
-        self.fee=fee
+        self._fee=fee
     def string(self):
-        print(self.program,'',self.year,'',self.fee,'',self.name,'',self.address)
+        print(self._name,'',self._address,'',self._program,'',self._year,'',self._fee)
     
 
 class Staff(Person):
-    def __init__ (self,school=str,pay=float,name=Person.name,address=Person.address):
-    self.school=school
-    self.pay=pay
+    def __init__ (self, name ,address,school=str,pay=float):
+        super().__init__(name, address)
+        self._school=school
+        self._pay=pay
     @property
     def school(self):
-        return self.school
+        return self._school
     @school.setter
     def school(self,school):
-        self.school=school
+        self._school=school
     @property
     def pay(self):
-        return self.pay
+        return self._pay
     @pay.setter
     def pay(self,pay):
-        self.pay=pay
+        self._pay=pay
     def string(self):
-        print(self.school,'',self.pay,'',self.name,'',self.address)
+        print(self._name,'',self._address,'',self._school,'',self._pay)
+
