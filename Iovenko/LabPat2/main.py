@@ -1,7 +1,24 @@
-class Staff:
-    def __init__(self, name: str, adress: str, school: str, pay: float):
+class Person:
+    def __init__(self, name: str, adress: str):
         self.name = name
         self.adress = adress
+
+    def get_Name(self):
+        return self.name
+
+    def get_Adress(self):
+        return self.adress
+
+    def set_Adress(self, adress: str):
+        self.adress = adress
+
+    def __str__(self):
+        return "Person -  [name = " + self.name + ", adress = " + self.adress + "]"
+
+
+class Staff(Person):
+    def __init__(self, name: str, adress: str, school: str, pay: float):
+        super().__init__(name, adress)
         self.school = school
         self.pay = pay
 
@@ -22,10 +39,9 @@ class Staff:
                + self.school + ", pay = " + str(self.pay) + "$]"
 
 
-class Student:
+class Student(Person):
     def __init__(self, name: str, adress: str, program: str, year: int, fee: float):
-        self.name = name
-        self.adress = adress
+        super().__init__(name, adress)
         self.program = program
         self.year = year
         self.fee = fee
@@ -51,24 +67,6 @@ class Student:
     def __str__(self):
         return "Student - [Person [name = " + self.name + ", adress = " + self.adress + \
                "], program = " + self.program + ", year = " + str(self.year) + ", fee = " + str(self.fee) + "$]"
-
-
-class Person:
-    def __init__(self, name: str, adress: str):
-        self.name = name
-        self.adress = adress
-
-    def get_Name(self):
-        return self.name
-
-    def get_Adress(self):
-        return self.adress
-
-    def set_Adress(self, adress: str):
-        self.adress = adress
-
-    def __str__(self):
-        return "Person -  [name = " + self.name + ", adress = " + self.adress + "]"
 
 
 mypers = Person("Arsen", "Kyiv")
