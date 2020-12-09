@@ -14,7 +14,7 @@ class Duck(metaclass=ABCMeta):
         self.fly_behavior.fly()
 
     def swim(self):
-        print("All ducks float, even decoys!")
+        print("Всі качки плавають")
 
     def perform_quack(self):
         self.quack_behavior.quack()
