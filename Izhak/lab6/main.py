@@ -161,6 +161,6 @@ class ShipmentProvider:
 print("Your name: Roman")
 Valentin = Customer()
 print("You want: an apple")
-print("Your credit information: Roman-666666")
-Valentin.orderItem("Pineapple", "Roman-666666")
+print("Your credit information: "Vlad Izhak")
+Valentin.orderItem("Pineapple", "Vlad Izhak")
 
