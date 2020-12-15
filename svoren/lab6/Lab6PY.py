@@ -63,7 +63,7 @@ class HomeTheaterFacade():
             self.cd.cd_on()
             self.cd2 = 1
             while(choice2!=1 or choice2!=2 or choice2!=3 or choice2!=4):
-                choice2= int(input("1.Radio X 57:45 2.K-DST 1:08:24 3.V Rock 1:18:59 4.Flash FM\nОберіть трек:"))
+                choice2= int(input("1.Radio X 57:45 2.K-DST 1:08:24 3.V Rock 1:18:59 4.Flash FM 1:03:12\nОберіть трек:"))
                 if(choice2==1 or choice2==2 or choice2==3 or choice2==4):
                     break
                 if(choice2!=1 and choice2!=2 and choice2!=3 or choice2!=4):
