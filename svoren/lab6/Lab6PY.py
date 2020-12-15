@@ -74,9 +74,9 @@ class HomeTheaterFacade():
         else:
             print("Бувайте.")
             if(self.dvd2==1):
-                self.dvd.dvd_off
+                self.dvd.dvd_off()
             if(self.cd2==1):
-                self.cd.cd_off
+                self.cd.cd_off()
             self.tuner.tuner_off()
             self.amp.amp_off()
             self.screen.screen_off()
